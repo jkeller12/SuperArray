@@ -41,5 +41,14 @@ public class SuperArray{
     return Old_Value;
   }
 
-  
+  private void resize()
+  {
+    String[] newData = new String[data.length * 2];
+    for (int i = 0 ; i < data.length; i++)
+    {
+      newData[i] = data[i];
+    }
+    data = newData; 
+  }
+
 }
