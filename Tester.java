@@ -255,6 +255,7 @@ public class Tester {
     }
 
     test.clear();
+
     for (int index = 0; index < before.size() /*this checks if any referrals to old values*/; index++) {
       boolean passed = true;
       if (test.get(index) != null) {
@@ -306,7 +307,7 @@ public class Tester {
     methodMessage("isEmpty()", failure);
     return failure;
   }
-
+/*
   public static boolean toStringTester() {
     System.out.println("\n ~~~ toString() TESTER ~~~");
     boolean failure = false;
@@ -315,6 +316,7 @@ public class Tester {
       defaultTestArray(),
       defaultTestArray()
     };
+    /*
     tests[2].set(2, null);                                                      //pops holes in some areas of the SuperArray
     tests[2].set(6, null);
 
@@ -335,7 +337,7 @@ public class Tester {
 
     methodMessage("toString()", failure);
     return failure;
-  }
+  }*/
 
   public static boolean containsTester() {
     System.out.println("\n ~~~ contains() TESTER ~~~");
@@ -349,13 +351,13 @@ public class Tester {
     } else {
       //System.out.println("Empty arrays contain nothing!");
     }
-
+/*
     if (test.contains(null)) {
       failure = true;
       System.out.println("It should not contain null.");
     } else {
       //System.out.println("Yup, it ignores null");
-    }
+    }*/
 
     System.out.println("\nTesting with not empty array.");
     test = defaultTestArray();
@@ -372,14 +374,14 @@ public class Tester {
       failure = true;
       System.out.println("It thinks the array has stuff it doesn't.");
     }
-
+/*
     if (test.contains(null)) {
       failure = true;
       System.out.println("How does it think it has null? The array is filled.");
     } else {
       //System.out.println("Your array doesn't think it has null values in a full array!");
-    }
-
+    }*/
+/*
     System.out.println("\nTesting with not holes in array.");
     test.set(2, null);
     test.set(6, null);
@@ -389,7 +391,7 @@ public class Tester {
       failure = true;
       System.out.println("You got an error with contains. Probably the extremities.");
     }
-
+*/
     if (test.contains("test2")) {
       failure = true;
       System.out.println("It thinks it contains a deleted value.");
@@ -403,7 +405,7 @@ public class Tester {
       failure = true;
       System.out.println("It thinks the array has stuff it doesn't.");
     }
-
+/*
     if (test.contains(null)) {
       failure = true;
       System.out.println("How does it think it has null? It shouldn't think that.");
@@ -414,6 +416,7 @@ public class Tester {
     methodMessage("contains()", failure);
     return failure;
   }
+*/
 
   public static boolean constructorWithInitialCapacityTester() {
     System.out.println("\n ~~~ constructor with initial array size TESTER ~~~");
