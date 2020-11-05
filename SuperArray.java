@@ -77,11 +77,9 @@ public class SuperArray{
       {
         Return_String += ", ";
       }
-      if (i == size()-1)
-      {
-        Return_String += "]";
-      }
+    
     }
+    Return_String += "]";
     return Return_String;
 
   }
@@ -163,7 +161,6 @@ public class SuperArray{
     }
     return Return_String;
 
-asdf
   }
 
 
