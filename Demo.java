@@ -55,7 +55,12 @@ public class Demo{
 
 
       System.out.println(findOverlap(WORDSB, words));
+      System.out.println("Should be true");
       System.out.println(words.equals(wordsA));
+      System.out.println("Should be false");
+      System.out.println(words.equals(WORDSB));
+
+
       }
 
   }
