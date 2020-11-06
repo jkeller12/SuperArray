@@ -28,7 +28,7 @@ public class Demo{
     return Return_SuperArray;
   }
 
-  
+
 
 
 
@@ -40,12 +40,22 @@ public class Demo{
       words.add("una");    words.add("ebi");     words.add("toro");
 
       System.out.println(words);
-      removeDuplicates(words);
+      //removeDuplicates(words);
       SuperArray WORDSB = new SuperArray();
       //grouped to save vertical space
       WORDSB.add("kani");   WORDSB.add("uni");     WORDSB.add("ebi");
+      WORDSB.add("daba shouldn't be here");
+
+
+      SuperArray wordsA = new SuperArray();
+      //grouped to save vertical space
+      wordsA.add("kani");   wordsA.add("uni");     wordsA.add("ebi");     wordsA.add("una");
+      wordsA.add("una");    wordsA.add("ebi");     wordsA.add("kani");    wordsA.add("una");
+      wordsA.add("una");    wordsA.add("ebi");     wordsA.add("toro");
+
 
       System.out.println(findOverlap(WORDSB, words));
+      System.out.println(words.equals(wordsA));
       }
 
   }

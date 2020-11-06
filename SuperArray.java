@@ -77,7 +77,7 @@ public class SuperArray{
       {
         Return_String += ", ";
       }
-    
+
     }
     Return_String += "]";
     return Return_String;
@@ -162,6 +162,42 @@ public class SuperArray{
     return Return_String;
 
   }
+
+  public int lastIndexOf(String value)
+  {
+    for (int i = size-1; i >= 0; i--)
+    {
+      if (data[i].equals(value))
+      {
+        return i;
+      }
+    }
+    return -1;
+
+  }
+
+  public boolean equals(SuperArray other)
+  { boolean A = true; 
+    if(other.size() != size)
+    {
+      return false;
+    }
+    for(int i = 0 ; i < size; i ++)
+    {
+      if (other.get(i).equals(get(i)))
+      {
+        A = true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    return true;
+
+  }
+
+
 
 
 }
