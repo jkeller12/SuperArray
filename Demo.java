@@ -34,9 +34,9 @@ public class Demo{
     //[a0, b0, a1, b1, a2, b2,...]
     // When there sizes are different, just fill in the resizeTester
     SuperArray ReturnArray = new SuperArray();
-    int Smaller_SIZE = (a.size()> b.size()) ? b.size(): a.size();
-    int Larger_SIZE = (a.size()> b.size()) ? a.size(): b.size();
-    SuperArray Larger = (a.size()> b.size()) ? a: b;
+    int Smaller_SIZE = (a.size()>= b.size()) ? b.size(): a.size();
+    int Larger_SIZE = (a.size()>= b.size()) ? a.size(): b.size();
+    SuperArray Larger = (a.size()>= b.size()) ? a: b;
     for (int i = 0; i < Smaller_SIZE; i++)
     {
       ReturnArray.add(a.get(i));
@@ -89,6 +89,10 @@ public class Demo{
       System.out.println(words.equals(WORDSB));
       System.out.println("ZIP");
       System.out.println(zip(WORDSB1, WORDSB));
+      System.out.println("ZIP Flipped B and A");
+      System.out.println(zip(WORDSB, WORDSB1));
+      System.out.println("ZIP SAME");
+      System.out.println(zip(WORDSB, WORDSB));
 
 
       }
