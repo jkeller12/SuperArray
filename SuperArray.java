@@ -14,11 +14,13 @@ public class SuperArray{
 
   public SuperArray(int initialCapacity)
   {
-    // Create the SuperArray w/ provided starting initialCapacity
     if (initialCapacity < 0 )
     {
       throw new IllegalArgumentException ();
     }
+
+    // Create the SuperArray w/ provided starting initialCapacity
+
     data = new String [initialCapacity];
     size = 0 ;
 
@@ -29,11 +31,13 @@ public class SuperArray{
     return size;
   }
 
-  public boolean add(String element) //Redone
-  { if (size == data.length)
+  public boolean add(String element)
+  {
+    if (size == data.length)
     {
       resize();
     }
+
     data[size] = element;
 
     size++;
@@ -47,6 +51,7 @@ public class SuperArray{
     {
       throw new IndexOutOfBoundsException();
     }
+
     return data[index];
   }
 
@@ -56,6 +61,7 @@ public class SuperArray{
     {
       throw new IndexOutOfBoundsException();
     }
+
     String Old_Value = data[index];
 
     data[index] = element;
@@ -65,11 +71,13 @@ public class SuperArray{
 
   private void resize()
   {
-    String[] newData = new String[data.length * 2 +1];
+    String[] newData = new String[data.length * 2 + 1];
+
     for (int i = 0 ; i < data.length; i++)
     {
       newData[i] = data[i];
     }
+
     data = newData;
   }
 
@@ -89,6 +97,7 @@ public class SuperArray{
   public String toString()
   {
     String Return_String = "[";
+
     for (int i = 0 ; i < size(); i++)
     {
       Return_String += data[i];
@@ -96,11 +105,11 @@ public class SuperArray{
       {
         Return_String += ", ";
       }
-
     }
-    Return_String += "]";
-    return Return_String;
 
+    Return_String += "]";
+
+    return Return_String;
   }
 
   public boolean contains(String s)
@@ -112,8 +121,8 @@ public class SuperArray{
         return true;
       }
     }
-    return false;
 
+    return false;
   }
 
 
@@ -126,18 +135,17 @@ public class SuperArray{
 
     // Inserts specified eleent at the specified position.
     // Shifts the element at the current position and those following o th eirhgt
+
     if (size == data.length)
     {
       resize();
     }
 
-
-
     for (int i = size; i > index; i --)
     {
       data[i] = data[i-1];
-
     }
+
     size ++ ;
     data[index] = element;
   }
@@ -147,25 +155,28 @@ public class SuperArray{
     // Removes the element at x position
     // Shifts the subsquent elemetns ot the left
     // Retursn the element you removed
+
     if (index < 0 || index >= size)
     {
-      throw new IndexOutOfBoundsException (); 
+      throw new IndexOutOfBoundsException ();
     }
 
     String Return_Value = data[index];
+
     for(int i = index; i < size -1 ; i++)
     {
       data[i] = data[i+1];
     }
+
     size -= 1;
     return Return_Value;
-
   }
 
   public int indexOf(String s)
   {
     // Returns the index of teh first occurrence of teh element
     // Returns -1 if it doesn't contain
+
     for (int i = 0 ; i < size; i ++)
     {
       if (data[i].equals(s))
@@ -173,18 +184,20 @@ public class SuperArray{
         return i;
       }
     }
+
     return -1;
   }
 
   public String[] toArray()
   {
     String[] Return_String = new String[size];
+
     for(int i = 0; i<size; i++)
     {
       Return_String[i] = data[i];
     }
-    return Return_String;
 
+    return Return_String;
   }
 
   public int lastIndexOf(String value)
@@ -197,15 +210,16 @@ public class SuperArray{
       }
     }
     return -1;
-
   }
 
   public boolean equals(SuperArray other)
-  { boolean A = true;
+  {
+    boolean A = true;
     if(other.size() != size)
     {
       return false;
     }
+
     for(int i = 0 ; i < size; i ++)
     {
       if (other.get(i).equals(get(i)))
@@ -217,11 +231,8 @@ public class SuperArray{
         return false;
       }
     }
+
     return true;
-
   }
-
-
-
-
+  
 }
