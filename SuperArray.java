@@ -12,6 +12,18 @@ public class SuperArray{
 
   }
 
+  public SuperArray(int initialCapacity)
+  {
+    // Create the SuperArray w/ provided starting initialCapacity
+    if (initialCapacity < 0 )
+    {
+      throw new IllegalArgumentException ();
+    }
+    data = new String [initialCapacity];
+    size = 0 ;
+
+  }
+
   public int size()
   {
     return size;
@@ -31,12 +43,19 @@ public class SuperArray{
 
   public String get(int index)
   {
+    if (index < 0 || index >= size())
+    {
+      throw new IndexOutOfBoundsException();
+    }
     return data[index];
   }
 
   public String set(int index, String element)
   {
-
+    if (index < 0 || index >= size())
+    {
+      throw new IndexOutOfBoundsException();
+    }
     String Old_Value = data[index];
 
     data[index] = element;
@@ -97,22 +116,22 @@ public class SuperArray{
 
   }
 
-  public SuperArray(int initialCapacity)
-  {
-    // Create the SuperArray w/ provided starting initialCapacity
-    data = new String [initialCapacity];
-    size = 0 ;
 
-  }
 
   public void add(int index, String element)
-  {
+  { if (index < 0 || index > size)
+    {
+      throw new IndexOutOfBoundsException ();
+    }
+
     // Inserts specified eleent at the specified position.
     // Shifts the element at the current position and those following o th eirhgt
     if (size == data.length)
     {
       resize();
     }
+
+
 
     for (int i = size; i > index; i --)
     {
@@ -128,6 +147,11 @@ public class SuperArray{
     // Removes the element at x position
     // Shifts the subsquent elemetns ot the left
     // Retursn the element you removed
+    if (index < 0 || index >= size)
+    {
+      throw new IndexOutOfBoundsException (); 
+    }
+
     String Return_Value = data[index];
     for(int i = index; i < size -1 ; i++)
     {
@@ -177,7 +201,7 @@ public class SuperArray{
   }
 
   public boolean equals(SuperArray other)
-  { boolean A = true; 
+  { boolean A = true;
     if(other.size() != size)
     {
       return false;
